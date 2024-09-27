@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numArr = [52, 273, 586, 32, 57, 103, 312, 2];
+      // 최소값과 최대값 출력
+      let max = numArr[0];
+      min = numArr[0];
+      for (let index = 0; index < numArr.length; index++) {
+        if (numArr[index] > max) max = numArr[index];
+        if (numArr[index] < min) min = numArr[index];
+      }
+      console.log(max);
+      console.log(min);
+      document.write("max ", max, "<br>");
+      document.write("min ", min, "<br>");
+      //사용자에게 한글로 된 행성 이름을 입력 받은 후 영어로 된 행성 이름출력
+      const planetKor = [
+        "수성",
+        "금성",
+        "지구",
+        "화성",
+        "목성",
+        "토성",
+        "천왕성",
+        "해왕성",
+      ];
+      const planetEng = [
+        "수성",
+        "금성",
+        "지구",
+        "화성",
+        "목성",
+        "토성",
+        "천왕성",
+        "해왕성",
+      ];
+      const input = prompt("행성 이름 입력");
+
+      console.log(planetEng[planetKor.indexOf(input)]);
+
+      document.write(planetEng[planetKor.indexOf(input)]);
+    </script>
+  </body>
+</html>
