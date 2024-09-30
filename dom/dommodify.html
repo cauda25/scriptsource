@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* #header {
+        color: blue;
+        font-size: 40px;
+        padding: 10px;
+        border: 1px solid red;
+      } */
+      .header {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header">Header1</h1>
+    <h1 id="header2" class="one two">Header2</h1>
+    <script>
+      // #header 요소의 style 지정
+      const hed = document.querySelector("#header");
+      hed.style.color = "blue";
+      hed.style.fontSize = "40px";
+      hed.style.padding = "10px";
+      hed.style.border = "1px solid red";
+
+      // #headar2요소의 class 변경하기
+      const header2 = document.querySelector("#header2");
+
+      // #header2 요소 전체 클래스 가져오기
+      console.log(header2.classList);
+      console.log(header2.classList[0]);
+      console.log(header2.classList[1]);
+      console.log(header2.className);
+
+      // 클래스 변경 one => header 변경
+      header2.classList.replace("one", "header");
+
+      // 클래스 추가
+      header2.classList.add("three");
+
+      // 클래스 추가, 동일한 클래스 존재 시 제거
+      header2.classList.toggle("four");
+      header2.classList.toggle("three");
+
+      // 클래스 제거
+      header2.classList.remove("two");
+    </script>
+  </body>
+</html>

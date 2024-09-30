@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>header1</h1>
+    <h2>header2</h2>
+    <div id="top">
+      <div id="nested">내용</div>
+    </div>
+    <p>삭제</p>
+    <ul id="myList">
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul>
+    <h1 id="header1" class="header">Header1</h1>
+    <h2 id="header2" class="header">Header2</h2>
+    <script>
+      // DOM 삭제
+      // h1 태그 삭제
+      // h1 찾기 - getElementById(), querySelector()
+      const h1 = document.querySelector("h1");
+      h1.remove();
+
+      // nested 요소 삭제
+      //   const nes = document.getElementById("nested");
+      //   nes.remove();
+
+      // 부모 입장에서 자식을 지정한 후 삭제
+      const top1 = document.getElementById("top");
+      const nested = document.getElementById("nested");
+
+      top1.removeChild(nested);
+
+      //   const li = document.querySelector("#myList li:first-child");
+      //   li.remove();
+
+      const myList = document.getElementById("myList");
+      myList.removeChild(myList.firstElementChild);
+
+      // 속성 삭제
+      // #header1 요소 id 삭제
+      const hea1 = document.getElementById("header1");
+      hea1.removeAttribute("id");
+
+      // #header2 요소 class 삭제
+      const hea2 = document.getElementById("header2");
+      hea2.removeAttribute("class");
+    </script>
+  </body>
+</html>

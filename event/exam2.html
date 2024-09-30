@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="../img/bg.png" alt="" />
+    <button>이미지 변경</button>
+    <div>
+      <button>Turn on the Light</button>
+      <img src="./pic_bulboff.gif" alt="" />
+      <button>Turn off the Light</button>
+    </div>
+    <script>
+      // 버튼 클릭 시 img 요소의 src 를 2.jpg 변경
+      // src property 사용
+      //document.querySelector("img").src = "../img/2.jpg";
+      // document.querySelector("img").setAttribute("src", "../img/2.jpg");
+
+      // 버튼 클릭 시 img 요소의 src 를 2.jpg 변경
+      document
+        .querySelector("button")
+        .addEventListener(
+          "click",
+          (e) => (document.querySelector("img").src = "../img/2.jpg")
+        );
+
+      //
+      const img = document.querySelector("div img");
+      // 버튼 개별처리
+      //   document
+      //     .querySelector(" div button:first-child")
+      //     .addEventListener("click", () => (img.src = " pic_bulbon.gif"));
+      //   document
+      //     .querySelector(" div button:last-child")
+      //     .addEventListener("click", () => (img.src = " pic_bulboff.gif"));
+
+      //이벤트 버블링
+      const div = document.querySelector("div");
+      div.addEventListener("click", (e) => {
+        // 어느 자기 버튼에서 이벤트가 발생 되었는가
+        // console.log(e.target);
+        // console.log(e.target.innerHTML);
+        if (e.target.innerHTML == "Turn on the Light") {
+          img.src = "pic_bulbon.gif";
+        } else {
+          img.src = "pic_bulboff.gif";
+        }
+      });
+    </script>
+  </body>
+</html>
