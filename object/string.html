@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const msg = "Hello Javascript!!";
+      document.write("특정 위치 문자 반환 : ", msg.charAt(1), "<br>");
+      document.write("문자 찾기 : ", msg.indexOf("j"), "<br>");
+      document.write("문자 찾기 : ", msg.indexOf("J"), "<br>");
+      document.write("대문자 변경 : ", msg.toUpperCase(), "<br>");
+      document.write("소문자 변경 : ", msg.toLowerCase(), "<br>");
+      document.write("문자 부분 추출 : ", msg.substring(2, 7), "<br>");
+      document.write("공백제거 : ", "      Hello".trim(), "<br>");
+      document.write("공백제거 : ", "      Hello", "<br>");
+      document.write("특정 문자 변경 : ", msg.replace("Hello", "Hi"), "<br>");
+      // 원본 문자열은 변경되지 않음
+      document.write("", msg, "<br>");
+      document.write("특정 문자 찾기 : ", msg.search("Ja"), "<br>");
+      document.write("특정 문자 찾기 : ", msg.search("ja"), "<br>");
+    </script>
+  </body>
+</html>

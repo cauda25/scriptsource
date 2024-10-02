@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // functoin 작성
+      const info = () => {
+        // 소문자로 이름 입력 받기
+        const un = prompt("이름 입력");
+        // 전화번호 입력 받기
+        const ut = prompt("전화번호 입력");
+        // 소문자로 입력받은 이름을 대문자로 변경 후 화면에 출력
+        document.write("이름 ", un.toUpperCase(), "<br>");
+        // 전화번호 010-4568-1234 => 010-####-1234 화면에 출력
+        document.write("전화번호 ", ut.replace(ut.substring(4, 8), "####"));
+      };
+      info();
+    </script>
+  </body>
+</html>

@@ -47,7 +47,7 @@
   </head>
   <body>
     <nav class="navber bg-light">
-      <div class="container">
+      <div class="container-fluid">
         <span class="navbar-brand">shop</span>
         <span class="badge bg-dark">Dark ♊</span>
       </div>
@@ -55,13 +55,24 @@
 
     <script>
       const bg = document.querySelector(".badge");
-      //badge 클릭시 bg-dark 클래스명이 있으면 bg-warning 변경
-      //badge 클릭시 bg-warning 클래스명이 있으면 bg-dark 변경
+      const body = document.querySelector("body");
       bg.addEventListener("click", (e) => {
         if (e.target.classList.contains("bg-dark")) {
+          //badge 클릭시 bg-dark 클래스명이 있으면 bg-warning 변경
           bg.classList.replace("bg-dark", "bg-warning");
+          bg.style.color = "black";
+          bg.innerHTML = "Light ♊";
+          //body.style.background = "black";
+          body.classList.add("bg-dark");
+          // 글자 색상 흰색, 글자 Light
         } else {
+          //badge 클릭시 bg-warning 클래스명이 있으면 bg-dark 변경
           bg.classList.replace("bg-warning", "bg-dark");
+          // 글자 색상 검정색, 글자 Dark
+          bg.style.color = "white";
+          bg.innerHTML = "Dark ♊";
+          // body.style.background = "white";
+          body.classList.add("bg-white");
         }
       });
     </script>

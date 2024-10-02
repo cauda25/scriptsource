@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // a태그 클릭시 이벤트 중지
+      document.querySelector("a").addEventListener("click", (e) => {
+        //a, submit, reset 이벤트 중지 : preventDefault()
+        e.preventDefault();
+
+        // a요소의 속석을 구글로 변경 후 구글로 이동
+        e.target.href = "https://www.google.com";
+        location.href = e.target.href;
+      });
+    </script>
+  </body>
+</html>
