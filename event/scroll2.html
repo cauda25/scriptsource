@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        height: 5000px;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .navbar-brand {
+        font-size: 45px;
+        transition: all 1s;
+      }
+      .badge {
+        padding: 15px;
+      }
+      /* span 위에 마우스를 올리면 손모양 */
+      span {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">shop</span>
+        <span class="badge bg-dark">Dark ♊</span>
+      </div>
+    </nav>
+    <div>
+      <img src="https://placehold.co/600x400" alt="" />
+    </div>
+    <script>
+      // 스크롤바를 500px 이상 내리면 로고 폰트 사이즈(20px) 줄이기
+      const navbar = document.querySelector(".navbar-brand");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          const navbar = document.querySelector(".navbar-brand");
+          navbar.style.fontSize = "20px";
+        } else {
+          navbar.style.fontSize = "45px";
+        }
+      });
+
+      const bg = document.querySelector(".badge");
+      const body = document.querySelector("body");
+      bg.addEventListener("click", (e) => {
+        if (e.target.classList.contains("bg-dark")) {
+          //badge 클릭시 bg-dark 클래스명이 있으면 bg-warning 변경
+          bg.classList.replace("bg-dark", "bg-warning");
+          bg.style.color = "black";
+          bg.innerHTML = "Light ♊";
+          //body.style.background = "black";
+          body.classList.add("bg-dark");
+          // 글자 색상 흰색, 글자 Light
+        } else {
+          //badge 클릭시 bg-warning 클래스명이 있으면 bg-dark 변경
+          bg.classList.replace("bg-warning", "bg-dark");
+          // 글자 색상 검정색, 글자 Dark
+          bg.style.color = "white";
+          bg.innerHTML = "Dark ♊";
+          // body.style.background = "white";
+          body.classList.add("bg-white");
+        }
+      });
+    </script>
+  </body>
+</html>
